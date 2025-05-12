@@ -1,5 +1,6 @@
 package com.example.jetbrainstest.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -40,6 +41,7 @@ public class CodeCanvasPage {
         acceptAllCookies.click();
     }
 
+    @Step("Переход на страницу блога")
     public void clickOnBlog() {
         LOG.info("Нажимаем на кнопку 'Blog'.");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -47,6 +49,7 @@ public class CodeCanvasPage {
         blogButton.click();
     }
 
+    @Step("Переход на страницу новостей")
     public void clickOnNews() {
         LOG.info("Нажимаем на кнопку 'News'.");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
