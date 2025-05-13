@@ -1,5 +1,6 @@
 package com.example.jetbrainstest.pages;
 
+import com.example.jetbrainstest.CodeCanvasLogger;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +15,8 @@ import java.time.Duration;
 
 public class CodeCanvasPage {
     private WebDriver driver;
-    private static final Logger LOG = LoggerFactory.getLogger(CodeCanvasPage.class);
+    private final CodeCanvasLogger LOG = new CodeCanvasLogger(LoggerFactory
+            .getLogger(CodeCanvasPage.class));
 
     @FindBy(xpath = "//button[contains(@class, 'ch2-allow-all-btn') " +
             "and contains(text(), 'Accept All')]")
@@ -41,7 +43,7 @@ public class CodeCanvasPage {
         acceptAllCookies.click();
     }
 
-    @Step("Переход на страницу блога")
+
     public void clickOnBlog() {
         LOG.info("Нажимаем на кнопку 'Blog'.");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -49,7 +51,7 @@ public class CodeCanvasPage {
         blogButton.click();
     }
 
-    @Step("Переход на страницу новостей")
+
     public void clickOnNews() {
         LOG.info("Нажимаем на кнопку 'News'.");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
