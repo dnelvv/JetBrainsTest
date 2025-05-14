@@ -1,12 +1,15 @@
 package com.example.jetbrainstest.tests;
 
+import com.example.jetbrainstest.CodeCanvasExtension;
 import com.example.jetbrainstest.pages.CodeCanvasPage;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+@ExtendWith(CodeCanvasExtension.class)
 public class CodeCanvasTest extends BaseTest {
     private CodeCanvasPage canvasPage;
 
