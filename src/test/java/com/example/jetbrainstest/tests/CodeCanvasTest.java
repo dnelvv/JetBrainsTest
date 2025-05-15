@@ -15,7 +15,6 @@ public class CodeCanvasTest extends BaseTest {
 
     @BeforeEach
     public void setUpEach() {
-        super.setUp();
         getDriver().get("https://www.jetbrains.com/codecanvas/");
         canvasPage = new CodeCanvasPage(getDriver());
         canvasPage.acceptCookie();
